@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 
+
 // Below are several code blocks, read them, understand them and try to find whats wrong.
 // Once this exercise is finished, we'll go over the code all together and we can share how we debugged the following problems.
 // Try to fix the code every time and good luck ! (write down how you found out the answer and how you debugged the problem)
@@ -68,6 +69,11 @@ for ($letter = 'a'; $letter <= 'z'; $letter++) {
     
 }
 
+// We can also use the foreach /range/array_push here
+// foreach (range ("a", "z") as $letter) {
+//     array_push($arr, $letter);
+// }
+
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
 
 
@@ -118,3 +124,58 @@ function copyright($year) {
 }
 //print the copyright
 echo copyright(date('Y'));
+
+///
+///
+///
+new_exercise(8);
+
+function login(string $email, string $password) {
+    if($email == 'john@example.be' && $password == 'pocahontas') {
+        return 'Welcome John'.' Smith';
+    }
+    return 'No access';
+}
+/* do not change any code below */
+//should greet the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas')."<br>";
+//Should say: no access
+echo login('john@example.be', 'dfgidfgdfg')."<br>";
+//Should say: no access
+echo login('wrong@example', 'wrong')."<br>";
+/* You can change code again */
+
+new_exercise(9);
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+//invalid link
+echo isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+echo isLinkValid('https://google.com/123.doc');
+//VALID link
+echo isLinkValid('http://google.com');
+//VALID link
+echo isLinkValid('http://google.com/test.txt');
+
+
+new_exercise(10);
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+for($i=0; $i <= count($areTheseFruits); $i++) {
+    if(!in_array($areTheseFruits[$i], $validFruits)) {
+        unset($areTheseFruits[$i]);
+        
+    }
+}
+var_dump($areTheseFruits);//do not change this
