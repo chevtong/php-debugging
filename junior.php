@@ -77,7 +77,7 @@ new_exercise(6);
 // Here is the name: $name - $name2
 // $name variables are randomly combined as seen in the code, fix all the bugs whilst keeping the functionality!
 // Examples: captain strange, ant widow, iron man, ...
-$arr = [];
+// $arr = [];
 
 
 // function combineNames($str1 = "", $str2 = "") {
@@ -110,3 +110,11 @@ $arr = [];
 // }
 
 // echo "Here is the name: " . combineNames();
+
+new_exercise(7);
+
+function copyright($year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright(date('Y'));
